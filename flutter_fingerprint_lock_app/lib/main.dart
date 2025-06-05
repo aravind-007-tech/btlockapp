@@ -5,7 +5,7 @@ import 'package:flutter_bluetooth_serial/flutter_bluetooth_serial.dart';
 void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key}); // ✅ uses super.key
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -18,10 +18,10 @@ class MyApp extends StatelessWidget {
 }
 
 class LockScreen extends StatefulWidget {
-  const LockScreen({super.key}); // ✅ uses super.key
+  const LockScreen({super.key});
 
   @override
-  LockScreenState createState() => LockScreenState(); // ✅ made class public
+  LockScreenState createState() => LockScreenState();
 }
 
 class LockScreenState extends State<LockScreen> {
@@ -43,11 +43,11 @@ class LockScreenState extends State<LockScreen> {
       });
 
       if (didAuthenticate) {
-        debugPrint('Fingerprint authenticated'); // ✅ print replaced
+        debugPrint('Fingerprint authenticated');
         _connectToBluetooth();
       }
     } catch (e) {
-      debugPrint('Authentication error: $e'); // ✅ print replaced
+      debugPrint('Authentication error: $e');
     }
   }
 
@@ -58,8 +58,8 @@ class LockScreenState extends State<LockScreen> {
 
     try {
       final device = BluetoothDevice(
-        name: "HC-05", // Replace with your device name
-        address: "00:00:00:00:00:00", // Replace with your device MAC address
+        name: "HC-05",
+        address: "00:00:00:00:00:00",
         type: BluetoothDeviceType.classic,
       );
 
